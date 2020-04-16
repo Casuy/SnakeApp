@@ -18,6 +18,7 @@
 		C18094F224486A5A00AC5573 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094F124486A5A00AC5573 /* HomeView.swift */; };
 		C18094F424487EE600AC5573 /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094F324487EE600AC5573 /* UpdateList.swift */; };
 		C18094F62448824A00AC5573 /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094F52448824A00AC5573 /* UpdateDetail.swift */; };
+		C18094F8244884EC00AC5573 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094F7244884EC00AC5573 /* UpdateStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C18094F124486A5A00AC5573 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C18094F324487EE600AC5573 /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 		C18094F52448824A00AC5573 /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
+		C18094F7244884EC00AC5573 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				C18094EF2448596E00AC5573 /* Home.swift */,
 				C18094F324487EE600AC5573 /* UpdateList.swift */,
 				C18094F52448824A00AC5573 /* UpdateDetail.swift */,
+				C18094F7244884EC00AC5573 /* UpdateStore.swift */,
 				C18094F124486A5A00AC5573 /* HomeView.swift */,
 				C15C9C7D24457C6600758AC1 /* MenuView.swift */,
 				C1414808243C3C0600BEAB7C /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1414803243C3BFB00BEAB7C /* AppDelegate.swift in Sources */,
+				C18094F8244884EC00AC5573 /* UpdateStore.swift in Sources */,
 				C18094F424487EE600AC5573 /* UpdateList.swift in Sources */,
 				C15C9C7E24457C6600758AC1 /* MenuView.swift in Sources */,
 				C18094F62448824A00AC5573 /* UpdateDetail.swift in Sources */,

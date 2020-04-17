@@ -37,7 +37,7 @@ struct ContentView: View {
                 .offset(x: 0, y: show ? -400 : -40)
                 .offset(x: viewState.width, y: viewState.height)
                 .offset(y: showCard ? -180 : 0)
-                .scaleEffect(showCard ? 1: 0.9)
+                .scaleEffect(showCard ? 1 : 0.9)
                 .rotationEffect(.degrees(show ? 0 : 10))
                 .rotationEffect(Angle(degrees: showCard ? -10 : 0))
                 .rotation3DEffect(Angle(degrees: showCard ? 0 : 10), axis: (x: 10.0, y: 0, z: 0))
@@ -52,8 +52,8 @@ struct ContentView: View {
                 .offset(x: 0, y: show ? -200 : -20)
                 .offset(x: viewState.width, y: viewState.height)
                 .offset(y: showCard ? -140 : 0)
-                .scaleEffect(showCard ? 1: 0.95)
-                .rotationEffect(Angle(degrees: show ? 0 : 5))
+                .scaleEffect(showCard ? 1 : 0.95)
+                .rotationEffect(Angle.degrees(show ? 0 : 5))
                 .rotationEffect(Angle(degrees: showCard ? -5 : 0))
                 .rotation3DEffect(Angle(degrees: showCard ? 0 : 5), axis: (x: 10.0, y: 0, z: 0))
                 .blendMode(.hardLight)
@@ -77,8 +77,7 @@ struct ContentView: View {
                     self.viewState = value.translation
                     self.show = true
                 }
-                .onEnded{
-                    value in
+                .onEnded { value in
                     self.viewState = .zero
                     self.show = false
                 }
@@ -147,7 +146,6 @@ struct CardView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 110, alignment: .top)
         }
-
     }
 }
 
@@ -182,7 +180,7 @@ struct BottomCardView: View {
                 .frame(width: 40, height: 5)
                 .cornerRadius(3)
                 .opacity(0.1)
-            Text("This certificate is proof that Meng to has achieved the UI Design course with approval from a Design+Code instructor.")
+            Text("This certificate is proof that Meng To has achieved the UI Design course with approval from a Design+Code instructor.")
                 .multilineTextAlignment(.center)
                 .font(.subheadline)
                 .lineSpacing(4)
@@ -194,6 +192,5 @@ struct BottomCardView: View {
         .background(Color.white)
         .cornerRadius(30)
         .shadow(radius: 20)
-        
     }
 }

@@ -10,27 +10,38 @@ import SwiftUI
 
 struct SnakeList: View {
     @State var snakes = snakeData
+    @State var active = false
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 30) {
-                Text("Snakes")
-                    .font(.largeTitle).bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 30)
-                    .padding(.top, 30)
-                
-                ForEach(snakes.indices, id: \.self) { index in
-                    GeometryReader { geometry in
-                        SnakeView(show: self.$snakes[index].show, snake: self.snakes[index])
-                            .offset(y: self.snakes[index].show ? -geometry.frame(in: .global).minY : 0)
+        ZStack {
+            Color.black.opacity(active ? 0.5 : 0)
+                .animation(.linear)
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView {
+                VStack(spacing: 30) {
+                    Text("Snakes")
+                        .font(.largeTitle).bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 30)
+                        .padding(.top, 30)
+                        .blur(radius: active ? 20 : 0)
+                    
+                    ForEach(snakes.indices, id: \.self) { index in
+                        GeometryReader { geometry in
+                            SnakeView(show: self.$snakes[index].show, active: self.$active, snake: self.snakes[index])
+                                .offset(y: self.snakes[index].show ? -geometry.frame(in: .global).minY : 0)
+                        }
+                        .frame(height: 280)
+                        .frame(maxWidth: self.snakes[index].show ? .infinity : screen.width - 60)
+                        .zIndex(self.snakes[index].show ? 1 : 0)
                     }
-                    .frame(height: 280)
-                    .frame(maxWidth: self.snakes[index].show ? .infinity : screen.width - 60)
                 }
+                .frame(width: screen.width)
+                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             }
-            .frame(width: screen.width)
-            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+            .statusBar(hidden: active ? true : false)
+            .animation(.linear)
         }
     }
 }
@@ -43,6 +54,7 @@ struct SnakeList_Previews: PreviewProvider {
 
 struct SnakeView: View {
     @Binding var show: Bool
+    @Binding var active: Bool
     var snake: Snake
     
     var body: some View {
@@ -109,6 +121,7 @@ struct SnakeView: View {
             
             .onTapGesture {
                 self.show.toggle()
+                self.active.toggle()
             }
             
         }

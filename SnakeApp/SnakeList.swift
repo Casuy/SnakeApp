@@ -11,6 +11,7 @@ import SwiftUI
 struct SnakeList: View {
     @State var snakes = snakeData
     @State var active = false
+    @State var activeIndex = -1
     
     var body: some View {
         ZStack {
@@ -29,8 +30,17 @@ struct SnakeList: View {
                     
                     ForEach(snakes.indices, id: \.self) { index in
                         GeometryReader { geometry in
-                            SnakeView(show: self.$snakes[index].show, active: self.$active, snake: self.snakes[index])
+                            SnakeView(
+                                show: self.$snakes[index].show,
+                                snake: self.snakes[index],
+                                active: self.$active,
+                                index: index,
+                                activeIndex: self.$activeIndex
+                            )
                                 .offset(y: self.snakes[index].show ? -geometry.frame(in: .global).minY : 0)
+                                .opacity(self.activeIndex != index && self.active ? 0 : 1)
+                                .scaleEffect(self.activeIndex != index && self.active ? 0.5 : 1)
+                                .offset(x: self.activeIndex != index && self.active ? screen.width : 0)
                         }
                         .frame(height: 280)
                         .frame(maxWidth: self.snakes[index].show ? .infinity : screen.width - 60)
@@ -54,8 +64,12 @@ struct SnakeList_Previews: PreviewProvider {
 
 struct SnakeView: View {
     @Binding var show: Bool
-    @Binding var active: Bool
     var snake: Snake
+    @Binding var active: Bool
+    var index: Int
+    @Binding var activeIndex: Int
+    
+    
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -122,6 +136,11 @@ struct SnakeView: View {
             .onTapGesture {
                 self.show.toggle()
                 self.active.toggle()
+                if self.show {
+                    self.activeIndex = self.index
+                } else {
+                    self.activeIndex = -1
+                }
             }
             
         }

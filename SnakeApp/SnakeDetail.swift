@@ -60,17 +60,20 @@ struct SnakeDetail: View {
                 .shadow(color: Color(snake.color).opacity(0.3), radius: 20, x: 0, y: 20)
                 
                 VStack(alignment: .leading, spacing: 30.0) {
-                    Text("The bandy-bandy (Vermicella annulata), also commonly known as the hoop snake, is a species of venomous snake in the family Elapidae. The species is endemic to Australia. It is considered weakly venomous.")
+                    Text(snake.intro)
                         .fixedSize(horizontal: false, vertical: true)
                     
                     Text("About this snake")
                         .font(.title).bold()
                     
-                    Text("The bandy-bandy is marked with alternating black and white or yellowish rings, which give the species both its common names and its scientific name (from the diminutive form, annul-, of the Latin anus, meaning \"ring\"). Though since 1996, only five species of bandy-bandies were thought to be in the genus Vermicella, the discovery of another species (V. parscauda) on a peninsula in Australia's far north indicates more species of bandy-bandies may exist.")
+                    Text(snake.text1)
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    Text("Despite being an elapid, bandy-bandy is weakly venomous with localized symptoms around the bite area. It is generally considered harmless due to the small size of its mouth and its inoffensive nature.")
+                    Text(snake.text2)
                         .fixedSize(horizontal: false, vertical: true)
+                    
+                    Text(snake.text3)
+                    .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(30)
             }

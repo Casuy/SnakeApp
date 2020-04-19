@@ -163,6 +163,12 @@ struct SnakeView: View {
                 }
             }
             
+            if show {
+//                SnakeDetail(snake: snake, show: $show, active: $active, activeIndex: $activeIndex)
+//                    .background(Color.white)
+//                    .animation(nil)
+            }
+            
         }
         .frame(height: show ? screen.height : 280)
         .scaleEffect(1 - self.activeView.height / 1000)

@@ -45,6 +45,7 @@
 		C18094F424487EE600AC5573 /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094F324487EE600AC5573 /* UpdateList.swift */; };
 		C18094F62448824A00AC5573 /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094F52448824A00AC5573 /* UpdateDetail.swift */; };
 		C18094F8244884EC00AC5573 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094F7244884EC00AC5573 /* UpdateStore.swift */; };
+		C1D1019D244C65D400C1ADDC /* SnakeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1019C244C65D400C1ADDC /* SnakeDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		C18094F324487EE600AC5573 /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 		C18094F52448824A00AC5573 /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		C18094F7244884EC00AC5573 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
+		C1D1019C244C65D400C1ADDC /* SnakeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				C15E2DF724499D0E00B2139B /* TabBar.swift */,
 				C18094F124486A5A00AC5573 /* HomeView.swift */,
 				C147E2DC244C080100128E1E /* SnakeList.swift */,
+				C1D1019C244C65D400C1ADDC /* SnakeDetail.swift */,
 				C15C9C7D24457C6600758AC1 /* MenuView.swift */,
 				C1414808243C3C0600BEAB7C /* Assets.xcassets */,
 				C147E2AE244AC40E00128E1E /* Work_Sans */,
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C15E2DFC2449A39B00B2139B /* RingView.swift in Sources */,
+				C1D1019D244C65D400C1ADDC /* SnakeDetail.swift in Sources */,
 				C1414803243C3BFB00BEAB7C /* AppDelegate.swift in Sources */,
 				C18094F8244884EC00AC5573 /* UpdateStore.swift in Sources */,
 				C18094F424487EE600AC5573 /* UpdateList.swift in Sources */,

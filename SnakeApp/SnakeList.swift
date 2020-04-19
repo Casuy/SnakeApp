@@ -76,29 +76,11 @@ struct SnakeView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            VStack(alignment: .leading, spacing: 30.0) {
-                Text("The bandy-bandy (Vermicella annulata), also commonly known as the hoop snake, is a species of venomous snake in the family Elapidae. The species is endemic to Australia. It is considered weakly venomous.")
-                
-                Text("About this snake")
-                    .font(.title).bold()
-                
-                Text("The bandy-bandy is marked with alternating black and white or yellowish rings, which give the species both its common names and its scientific name (from the diminutive form, annul-, of the Latin anus, meaning \"ring\"). Though since 1996, only five species of bandy-bandies were thought to be in the genus Vermicella, the discovery of another species (V. parscauda) on a peninsula in Australia's far north indicates more species of bandy-bandies may exist.")
-                
-                Text("Despite being an elapid, V. annulata is weakly venomous with localized symptoms around the bite area. It is generally considered harmless due to the small size of its mouth and its inoffensive nature.")
-            }
-            .padding(30)
-            .frame(maxWidth: show ? .infinity : screen.width - 60, maxHeight: show ? .infinity : 280, alignment: .top)
-            .offset(y: show ? 460 : 0)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 20)
-            .opacity(show ? 1 : 0)
-            
             VStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 8.0) {
                         Text(snake.title)
-                            .font(.system(size: 24, weight: .bold))
+                            .font(.system(size: show ? 30 : 24, weight: .bold))
                             .foregroundColor(.white)
                         Text(snake.subtitle)
                             .foregroundColor(Color.white.opacity(0.7))
@@ -106,20 +88,6 @@ struct SnakeView: View {
                     
                     Spacer()
                     
-                    ZStack {
-//                        Image(uiImage: #imageLiteral(resourceName: "Logo1"))
-//                            .opacity(show ? 0 : 1)
-                        
-                        VStack {
-                            Image(systemName: "xmark")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundColor(.white)
-                        }
-                        .frame(width: 36, height: 36)
-                        .background(Color.black.opacity(0.6))
-                        .clipShape(Circle())
-                        .opacity(show ? 1 : 0)
-                    }
                 }
                 Spacer()
                 Image(uiImage: snake.image)
@@ -130,29 +98,10 @@ struct SnakeView: View {
             }
             .padding(show ? 30 : 20)
             .padding(.top, show ? 30 : 0)
-    //        .frame(width: show ? screen.width : screen.width - 60, height: show ? screen.height : 280)
             .frame(maxWidth: show ? .infinity : screen.width - 60, maxHeight: show ? 460 : 280)
             .background(Color(snake.color))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .shadow(color: Color(snake.color).opacity(0.3), radius: 20, x: 0, y: 20)
-            .gesture(
-                show ?
-                DragGesture().onChanged { value in
-                    guard value.translation.height < 300 else { return }
-                    guard value.translation.height > 0 else { return }
-                    
-                    self.activeView = value.translation
-                }
-                .onEnded { value in
-                    if self.activeView.height > 50 {
-                        self.show = false
-                        self.active = false
-                        self.activeIndex = -1
-                    }
-                    self.activeView = .zero
-                }
-                : nil
-            )
             .onTapGesture {
                 self.show.toggle()
                 self.active.toggle()
@@ -164,35 +113,16 @@ struct SnakeView: View {
             }
             
             if show {
-//                SnakeDetail(snake: snake, show: $show, active: $active, activeIndex: $activeIndex)
-//                    .background(Color.white)
-//                    .animation(nil)
+                SnakeDetail(snake: snake, show: $show, active: $active, activeIndex: $activeIndex)
+                    .background(Color.white)
+                    .animation(nil)
             }
             
         }
         .frame(height: show ? screen.height : 280)
         .scaleEffect(1 - self.activeView.height / 1000)
         .rotation3DEffect(Angle(degrees: Double(self.activeView.height / 10)), axis: (x: 0, y: 10.0, z: 0))
-//        .hueRotation(Angle(degrees: Double(self.activeView.height)))
         .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-        .gesture(
-            show ?
-            DragGesture().onChanged { value in
-                guard value.translation.height < 300 else { return }
-                guard value.translation.height > 0 else { return }
-                
-                self.activeView = value.translation
-            }
-            .onEnded { value in
-                if self.activeView.height > 50 {
-                    self.show = false
-                    self.active = false
-                    self.activeIndex = -1
-                }
-                self.activeView = .zero
-            }
-            : nil
-        )
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -202,7 +132,6 @@ struct Snake: Identifiable {
     var title: String
     var subtitle: String
     var image: UIImage
-//    var logo: UIImage
     var color: UIColor
     var show: Bool
 }

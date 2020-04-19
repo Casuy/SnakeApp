@@ -21,7 +21,7 @@ struct SnakeDetail: View {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text(snake.title)
-                                .font(.system(size: 24, weight: .bold))
+                                .font(.system(size: show ? 30 : 24, weight: .bold))
                                 .foregroundColor(.white)
                             Text(snake.subtitle)
                                 .foregroundColor(Color.white.opacity(0.7))
@@ -61,13 +61,16 @@ struct SnakeDetail: View {
                 
                 VStack(alignment: .leading, spacing: 30.0) {
                     Text("The bandy-bandy (Vermicella annulata), also commonly known as the hoop snake, is a species of venomous snake in the family Elapidae. The species is endemic to Australia. It is considered weakly venomous.")
+                        .fixedSize(horizontal: false, vertical: true)
                     
                     Text("About this snake")
                         .font(.title).bold()
                     
                     Text("The bandy-bandy is marked with alternating black and white or yellowish rings, which give the species both its common names and its scientific name (from the diminutive form, annul-, of the Latin anus, meaning \"ring\"). Though since 1996, only five species of bandy-bandies were thought to be in the genus Vermicella, the discovery of another species (V. parscauda) on a peninsula in Australia's far north indicates more species of bandy-bandies may exist.")
+                        .fixedSize(horizontal: false, vertical: true)
                     
-                    Text("Despite being an elapid, Bandy-bandy is weakly venomous with localized symptoms around the bite area. It is generally considered harmless due to the small size of its mouth and its inoffensive nature.")
+                    Text("Despite being an elapid, bandy-bandy is weakly venomous with localized symptoms around the bite area. It is generally considered harmless due to the small size of its mouth and its inoffensive nature.")
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(30)
             }

@@ -48,6 +48,7 @@
 		C1D1019D244C65D400C1ADDC /* SnakeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1019C244C65D400C1ADDC /* SnakeDetail.swift */; };
 		C1D1019F244C6C0C00C1ADDC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1019E244C6C0C00C1ADDC /* Data.swift */; };
 		C1D101A1244C6DEC00C1ADDC /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D101A0244C6DEC00C1ADDC /* PostList.swift */; };
+		C1D101A3244C70AD00C1ADDC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D101A2244C70AD00C1ADDC /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		C1D1019C244C65D400C1ADDC /* SnakeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeDetail.swift; sourceTree = "<group>"; };
 		C1D1019E244C6C0C00C1ADDC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		C1D101A0244C6DEC00C1ADDC /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
+		C1D101A2244C70AD00C1ADDC /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				C18094F52448824A00AC5573 /* UpdateDetail.swift */,
 				C18094F7244884EC00AC5573 /* UpdateStore.swift */,
 				C1D1019E244C6C0C00C1ADDC /* Data.swift */,
+				C1D101A2244C70AD00C1ADDC /* DataStore.swift */,
 				C1D101A0244C6DEC00C1ADDC /* PostList.swift */,
 				C15E2DF724499D0E00B2139B /* TabBar.swift */,
 				C18094F124486A5A00AC5573 /* HomeView.swift */,
@@ -291,6 +294,7 @@
 			files = (
 				C15E2DFC2449A39B00B2139B /* RingView.swift in Sources */,
 				C1D1019F244C6C0C00C1ADDC /* Data.swift in Sources */,
+				C1D101A3244C70AD00C1ADDC /* DataStore.swift in Sources */,
 				C1D1019D244C65D400C1ADDC /* SnakeDetail.swift in Sources */,
 				C1414803243C3BFB00BEAB7C /* AppDelegate.swift in Sources */,
 				C18094F8244884EC00AC5573 /* UpdateStore.swift in Sources */,

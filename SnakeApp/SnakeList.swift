@@ -9,21 +9,28 @@
 import SwiftUI
 
 struct SnakeList: View {
-    @State var show = false
-    @State var show2 = false
+    @State var snakes = snakeData
     
     var body: some View {
         ScrollView {
             VStack(spacing: 30) {
-                SnakeView(show: $show)
-                GeometryReader { geometry in
-                    SnakeView(show: self.$show2)
-                        .offset(y: self.show2 ? -geometry.frame(in: .global).minY : 0)
+                Text("Snakes")
+                    .font(.largeTitle).bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 30)
+                    .padding(.top, 30)
+                
+                ForEach(snakes.indices, id: \.self) { index in
+                    GeometryReader { geometry in
+                        SnakeView(show: self.$snakes[index].show, snake: self.snakes[index])
+                            .offset(y: self.snakes[index].show ? -geometry.frame(in: .global).minY : 0)
+                    }
+                    .frame(height: 280)
+                    .frame(maxWidth: self.snakes[index].show ? .infinity : screen.width - 60)
                 }
-                .frame(height: show2 ? screen.height : 280)
-                .frame(maxWidth: show2 ? .infinity : screen.width - 60)
             }
             .frame(width: screen.width)
+            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
         }
     }
 }
@@ -36,6 +43,7 @@ struct SnakeList_Previews: PreviewProvider {
 
 struct SnakeView: View {
     @Binding var show: Bool
+    var snake: Snake
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -60,18 +68,18 @@ struct SnakeView: View {
             VStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 8.0) {
-                        Text("Bandy-Bandy")
+                        Text(snake.title)
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(.white)
-                        Text("Vermicella Annulata")
+                        Text(snake.subtitle)
                             .foregroundColor(Color.white.opacity(0.7))
                     }
                     
                     Spacer()
                     
                     ZStack {
-                        Image(uiImage: #imageLiteral(resourceName: "Logo1"))
-                            .opacity(show ? 0 : 1)
+//                        Image(uiImage: #imageLiteral(resourceName: "Logo1"))
+//                            .opacity(show ? 0 : 1)
                         
                         VStack {
                             Image(systemName: "xmark")
@@ -85,7 +93,7 @@ struct SnakeView: View {
                     }
                 }
                 Spacer()
-                Image(uiImage: #imageLiteral(resourceName: "Card2"))
+                Image(uiImage: snake.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: .infinity)
@@ -95,16 +103,42 @@ struct SnakeView: View {
             .padding(.top, show ? 30 : 0)
     //        .frame(width: show ? screen.width : screen.width - 60, height: show ? screen.height : 280)
                 .frame(maxWidth: show ? .infinity : screen.width - 60, maxHeight: show ? 460 : 280)
-            .background(Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)))
+                .background(Color(snake.color))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color(#colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)).opacity(0.3), radius: 20, x: 0, y: 20)
+                .shadow(color: Color(snake.color).opacity(0.3), radius: 20, x: 0, y: 20)
             
             .onTapGesture {
                 self.show.toggle()
             }
             
         }
+        .frame(height: show ? screen.height : 280)
         .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
         .edgesIgnoringSafeArea(.all)
     }
 }
+
+struct Snake: Identifiable {
+    var id = UUID()
+    var title: String
+    var subtitle: String
+    var image: UIImage
+//    var logo: UIImage
+    var color: UIColor
+    var show: Bool
+}
+
+var snakeData = [
+    Snake(title: "Bandy-Bandy", subtitle: "18 Sections", image: #imageLiteral(resourceName: "bandy_bandy"), color: #colorLiteral(red: 0.7372248769, green: 0.5804231763, blue: 0.4470093846, alpha: 1), show: false),
+    Snake(title: "Carpet Python", subtitle: "20 Sections", image: #imageLiteral(resourceName: "carpet_python"), color: #colorLiteral(red: 0.5881839991, green: 0.5804234743, blue: 0.4626886249, alpha: 1), show: false),
+    Snake(title: "Coastal Taipan", subtitle: "20 Sections", image: #imageLiteral(resourceName: "coastal_taipan"), color: #colorLiteral(red: 0.6039261222, green: 0.2666824162, blue: 0.2078307867, alpha: 1), show: false),
+    Snake(title: "Common \nDeath Adder", subtitle: "20 Sections", image: #imageLiteral(resourceName: "common_death_adder"), color: #colorLiteral(red: 0.2548547685, green: 0.3255104423, blue: 0.32936728, alpha: 1), show: false),
+    Snake(title: "Eastern \nBrown Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "eastern_brown_snake"), color: #colorLiteral(red: 0.7372162342, green: 0.6235631704, blue: 0.5175873041, alpha: 1), show: false),
+    Snake(title: "Lowland \nCopperhead", subtitle: "20 Sections", image: #imageLiteral(resourceName: "lowland_copperhead"), color: #colorLiteral(red: 0.4195464253, green: 0.4941426516, blue: 0.2431051433, alpha: 1), show: false),
+    Snake(title: "Mulga Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "mulga_snake"), color: #colorLiteral(red: 0.4784348011, green: 0.2078552246, blue: 0.1058855429, alpha: 1), show: false),
+    Snake(title: "Red-Bellied \nBlack Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "redbellied_black_snake"), color: #colorLiteral(red: 0.5959804654, green: 0.7412180305, blue: 0.7136368155, alpha: 1), show: false),
+    Snake(title: "Spotted Python", subtitle: "20 Sections", image: #imageLiteral(resourceName: "spotted_python"), color: #colorLiteral(red: 0.7372277379, green: 0.5647352338, blue: 0.3803527355, alpha: 1), show: false),
+    Snake(title: "Tiger Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "tiger_snake"), color: #colorLiteral(red: 0.5175920129, green: 0.5451271534, blue: 0.4077922404, alpha: 1), show: false),
+    Snake(title: "Western \nBrown Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "western_brown_snake"), color: #colorLiteral(red: 0.6940664649, green: 0.6510158181, blue: 0.5607172847, alpha: 1), show: false),
+]
+ 

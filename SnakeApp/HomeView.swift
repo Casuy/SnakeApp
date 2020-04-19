@@ -102,7 +102,7 @@ struct SectionView: View {
             HStack(alignment: .top) {
                 Text(section.title)
                     .font(.system(size: 24, weight: .bold))
-                    .frame(width: 160, alignment: .leading)
+                    .frame(width: 200, alignment: .leading)
                     .foregroundColor(.white)
                 Spacer()
                 Image(section.logo)
@@ -113,7 +113,7 @@ struct SectionView: View {
             section.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 210)
+                .frame(height: 150)
         }
         .padding(.top, 20)
         .padding(.horizontal, 20)
@@ -134,9 +134,17 @@ struct Section: Identifiable {
 }
 
 let sectionData = [
-    Section(title: "Prototype designs in SwiftUI", text: "18 Sections", logo: "Logo1", image: Image(uiImage: #imageLiteral(resourceName: "Card4")), color: Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1))),
-    Section(title: "Build a SwiftUI app", text: "20 Sections", logo: "Logo1", image: Image(uiImage: #imageLiteral(resourceName: "Card5")), color: Color(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1))),
-    Section(title: "SwiftUI Advanced", text: "20 Sections", logo: "Logo1", image: Image(uiImage: #imageLiteral(resourceName: "Card3")), color: Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1))),
+    Section(title: "Bandy Bandy", text: "18 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "bandy_bandy")), color: Color(#colorLiteral(red: 0.7372248769, green: 0.5804231763, blue: 0.4470093846, alpha: 1))),
+    Section(title: "Carpet Python", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "carpet_python")), color: Color(#colorLiteral(red: 0.5881839991, green: 0.5804234743, blue: 0.4626886249, alpha: 1))),
+    Section(title: "Coastal Taipan", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "coastal_taipan")), color: Color(#colorLiteral(red: 0.6039261222, green: 0.2666824162, blue: 0.2078307867, alpha: 1))),
+    Section(title: "Common \nDeath Adder", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "common_death_adder")), color: Color(#colorLiteral(red: 0.2548547685, green: 0.3255104423, blue: 0.32936728, alpha: 1))),
+    Section(title: "Eastern \nBrown Snake", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "eastern_brown_snake")), color: Color(#colorLiteral(red: 0.7372162342, green: 0.6235631704, blue: 0.5175873041, alpha: 1))),
+    Section(title: "Lowland \nCopperhead", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "lowland_copperhead")), color: Color(#colorLiteral(red: 0.4195464253, green: 0.4941426516, blue: 0.2431051433, alpha: 1))),
+    Section(title: "Mulga Snake", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "mulga_snake")), color: Color(#colorLiteral(red: 0.4784348011, green: 0.2078552246, blue: 0.1058855429, alpha: 1))),
+    Section(title: "Red-Bellied \nBlack Snake", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "redbellied_black_snake")), color: Color(#colorLiteral(red: 0.5959804654, green: 0.7412180305, blue: 0.7136368155, alpha: 1))),
+    Section(title: "Spotted Python", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "spotted_python")), color: Color(#colorLiteral(red: 0.7372277379, green: 0.5647352338, blue: 0.3803527355, alpha: 1))),
+    Section(title: "Tiger Snake", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "tiger_snake")), color: Color(#colorLiteral(red: 0.5175920129, green: 0.5451271534, blue: 0.4077922404, alpha: 1))),
+    Section(title: "Western \nBrown Snake", text: "20 Sections", logo: "", image: Image(uiImage: #imageLiteral(resourceName: "western_brown_snake")), color: Color(#colorLiteral(red: 0.6940664649, green: 0.6510158181, blue: 0.5607172847, alpha: 1))),
 ]
 
 

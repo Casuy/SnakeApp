@@ -36,9 +36,9 @@
 		C147E2D9244AC40F00128E1E /* WorkSans-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C147E2C3244AC40F00128E1E /* WorkSans-Italic-VariableFont_wght.ttf */; };
 		C147E2DA244AC40F00128E1E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C147E2C4244AC40F00128E1E /* OFL.txt */; };
 		C147E2DB244AC40F00128E1E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C147E2C5244AC40F00128E1E /* README.txt */; };
+		C147E2DD244C080100128E1E /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C147E2DC244C080100128E1E /* CourseList.swift */; };
 		C15C9C7E24457C6600758AC1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C9C7D24457C6600758AC1 /* MenuView.swift */; };
 		C15E2DF824499D0E00B2139B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E2DF724499D0E00B2139B /* TabBar.swift */; };
-		C15E2DFA2449A38400B2139B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E2DF92449A38400B2139B /* SwiftUIView.swift */; };
 		C15E2DFC2449A39B00B2139B /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E2DFB2449A39B00B2139B /* RingView.swift */; };
 		C18094F02448596E00AC5573 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094EF2448596E00AC5573 /* Home.swift */; };
 		C18094F224486A5A00AC5573 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094F124486A5A00AC5573 /* HomeView.swift */; };
@@ -79,9 +79,9 @@
 		C147E2C3244AC40F00128E1E /* WorkSans-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		C147E2C4244AC40F00128E1E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		C147E2C5244AC40F00128E1E /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		C147E2DC244C080100128E1E /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		C15C9C7D24457C6600758AC1 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		C15E2DF724499D0E00B2139B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		C15E2DF92449A38400B2139B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		C15E2DFB2449A39B00B2139B /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		C18094EF2448596E00AC5573 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		C18094F124486A5A00AC5573 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -123,7 +123,6 @@
 				C1414802243C3BFB00BEAB7C /* AppDelegate.swift */,
 				C1414804243C3BFB00BEAB7C /* SceneDelegate.swift */,
 				C1414806243C3BFB00BEAB7C /* ContentView.swift */,
-				C15E2DF92449A38400B2139B /* SwiftUIView.swift */,
 				C15E2DFB2449A39B00B2139B /* RingView.swift */,
 				C147E2AC2449C29300128E1E /* Modifiers.swift */,
 				C18094EF2448596E00AC5573 /* Home.swift */,
@@ -132,6 +131,7 @@
 				C18094F7244884EC00AC5573 /* UpdateStore.swift */,
 				C15E2DF724499D0E00B2139B /* TabBar.swift */,
 				C18094F124486A5A00AC5573 /* HomeView.swift */,
+				C147E2DC244C080100128E1E /* CourseList.swift */,
 				C15C9C7D24457C6600758AC1 /* MenuView.swift */,
 				C1414808243C3C0600BEAB7C /* Assets.xcassets */,
 				C147E2AE244AC40E00128E1E /* Work_Sans */,
@@ -283,9 +283,9 @@
 				C15E2DFC2449A39B00B2139B /* RingView.swift in Sources */,
 				C1414803243C3BFB00BEAB7C /* AppDelegate.swift in Sources */,
 				C18094F8244884EC00AC5573 /* UpdateStore.swift in Sources */,
-				C15E2DFA2449A38400B2139B /* SwiftUIView.swift in Sources */,
 				C18094F424487EE600AC5573 /* UpdateList.swift in Sources */,
 				C15C9C7E24457C6600758AC1 /* MenuView.swift in Sources */,
+				C147E2DD244C080100128E1E /* CourseList.swift in Sources */,
 				C18094F62448824A00AC5573 /* UpdateDetail.swift in Sources */,
 				C18094F02448596E00AC5573 /* Home.swift in Sources */,
 				C18094F224486A5A00AC5573 /* HomeView.swift in Sources */,

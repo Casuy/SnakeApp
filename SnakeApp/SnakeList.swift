@@ -109,7 +109,7 @@ struct SnakeView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: .infinity)
-                    .frame(height: 140, alignment: .top)
+                    .frame(height: snake.show ? 220 : 140, alignment: .top)
             }
             .padding(show ? 30 : 20)
             .padding(.top, show ? 30 : 0)
@@ -142,16 +142,16 @@ struct Snake: Identifiable {
 }
 
 var snakeData = [
-    Snake(title: "Bandy-Bandy", subtitle: "18 Sections", image: #imageLiteral(resourceName: "bandy_bandy"), color: #colorLiteral(red: 0.7372248769, green: 0.5804231763, blue: 0.4470093846, alpha: 1), show: false),
-    Snake(title: "Carpet Python", subtitle: "20 Sections", image: #imageLiteral(resourceName: "carpet_python"), color: #colorLiteral(red: 0.5881839991, green: 0.5804234743, blue: 0.4626886249, alpha: 1), show: false),
-    Snake(title: "Coastal Taipan", subtitle: "20 Sections", image: #imageLiteral(resourceName: "coastal_taipan"), color: #colorLiteral(red: 0.6039261222, green: 0.2666824162, blue: 0.2078307867, alpha: 1), show: false),
-    Snake(title: "Common \nDeath Adder", subtitle: "20 Sections", image: #imageLiteral(resourceName: "common_death_adder"), color: #colorLiteral(red: 0.2548547685, green: 0.3255104423, blue: 0.32936728, alpha: 1), show: false),
-    Snake(title: "Eastern \nBrown Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "eastern_brown_snake"), color: #colorLiteral(red: 0.7372162342, green: 0.6235631704, blue: 0.5175873041, alpha: 1), show: false),
-    Snake(title: "Lowland \nCopperhead", subtitle: "20 Sections", image: #imageLiteral(resourceName: "lowland_copperhead"), color: #colorLiteral(red: 0.4195464253, green: 0.4941426516, blue: 0.2431051433, alpha: 1), show: false),
-    Snake(title: "Mulga Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "mulga_snake"), color: #colorLiteral(red: 0.4784348011, green: 0.2078552246, blue: 0.1058855429, alpha: 1), show: false),
-    Snake(title: "Red-Bellied \nBlack Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "redbellied_black_snake"), color: #colorLiteral(red: 0.5959804654, green: 0.7412180305, blue: 0.7136368155, alpha: 1), show: false),
-    Snake(title: "Spotted Python", subtitle: "20 Sections", image: #imageLiteral(resourceName: "spotted_python"), color: #colorLiteral(red: 0.7372277379, green: 0.5647352338, blue: 0.3803527355, alpha: 1), show: false),
-    Snake(title: "Tiger Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "tiger_snake"), color: #colorLiteral(red: 0.5175920129, green: 0.5451271534, blue: 0.4077922404, alpha: 1), show: false),
-    Snake(title: "Western \nBrown Snake", subtitle: "20 Sections", image: #imageLiteral(resourceName: "western_brown_snake"), color: #colorLiteral(red: 0.6940664649, green: 0.6510158181, blue: 0.5607172847, alpha: 1), show: false),
+    Snake(title: "Bandy-Bandy", subtitle: "Vermicella Annulata", image: #imageLiteral(resourceName: "bandy_bandy"), color: #colorLiteral(red: 0.7372248769, green: 0.5804231763, blue: 0.4470093846, alpha: 1), show: false),
+    Snake(title: "Carpet Python", subtitle: "Morelia Spilota", image: #imageLiteral(resourceName: "carpet_python"), color: #colorLiteral(red: 0.5881839991, green: 0.5804234743, blue: 0.4626886249, alpha: 1), show: false),
+    Snake(title: "Coastal Taipan", subtitle: "Oxyuranus Scutellatus", image: #imageLiteral(resourceName: "coastal_taipan"), color: #colorLiteral(red: 0.6039261222, green: 0.2666824162, blue: 0.2078307867, alpha: 1), show: false),
+    Snake(title: "Common \nDeath Adder", subtitle: "Acanthophis Antarcticus", image: #imageLiteral(resourceName: "common_death_adder"), color: #colorLiteral(red: 0.2548547685, green: 0.3255104423, blue: 0.32936728, alpha: 1), show: false),
+    Snake(title: "Eastern \nBrown Snake", subtitle: "Pseudonaja Textilis", image: #imageLiteral(resourceName: "eastern_brown_snake"), color: #colorLiteral(red: 0.7372162342, green: 0.6235631704, blue: 0.5175873041, alpha: 1), show: false),
+    Snake(title: "Lowland \nCopperhead", subtitle: "Austrelaps Superbus", image: #imageLiteral(resourceName: "lowland_copperhead"), color: #colorLiteral(red: 0.4195464253, green: 0.4941426516, blue: 0.2431051433, alpha: 1), show: false),
+    Snake(title: "Mulga Snake", subtitle: "Pseudechis Australis", image: #imageLiteral(resourceName: "mulga_snake"), color: #colorLiteral(red: 0.4784348011, green: 0.2078552246, blue: 0.1058855429, alpha: 1), show: false),
+    Snake(title: "Red-Bellied \nBlack Snake", subtitle: "Pseudechis Porphyriacus", image: #imageLiteral(resourceName: "redbellied_black_snake"), color: #colorLiteral(red: 0.5959804654, green: 0.7412180305, blue: 0.7136368155, alpha: 1), show: false),
+    Snake(title: "Spotted Python", subtitle: "Antaresia Maculosa", image: #imageLiteral(resourceName: "spotted_python"), color: #colorLiteral(red: 0.7372277379, green: 0.5647352338, blue: 0.3803527355, alpha: 1), show: false),
+    Snake(title: "Tiger Snake", subtitle: "Notechis scutatus", image: #imageLiteral(resourceName: "tiger_snake"), color: #colorLiteral(red: 0.5175920129, green: 0.5451271534, blue: 0.4077922404, alpha: 1), show: false),
+    Snake(title: "Western \nBrown Snake", subtitle: "Pseudonaja Nuchalis", image: #imageLiteral(resourceName: "western_brown_snake"), color: #colorLiteral(red: 0.8548869491, green: 0.560811162, blue: 0.1176914498, alpha: 1), show: false),
 ]
  

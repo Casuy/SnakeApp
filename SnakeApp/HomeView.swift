@@ -18,7 +18,7 @@ struct HomeView: View {
             VStack {
                 HStack {
                     Text("SnakeApp")
-                        .font(.system(size: 28, weight: .bold))
+                        .font(.largeTitle).bold()
                         .modifier(CustomFontModifier(size: 34))
                     
                     Spacer()
@@ -56,7 +56,7 @@ struct HomeView: View {
                 }
                 .offset(y: -30)
                 
-                Text("—— Developed by Zihan Yang ——").font(.subheadline)
+                Text("—— Project Info ——").font(.subheadline)
                     .foregroundColor(Color.gray)
                     .onTapGesture {
                         self.showContent = true
@@ -70,7 +70,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(showProfile: .constant(false), showContent: .constant(true))
+        HomeView(showProfile: .constant(false), showContent: .constant(true)).previewDevice("iPhone X")
     }
 }
 
@@ -155,7 +155,7 @@ struct ButtonsView: View {
                     }
                 }
                 .sheet(isPresented: $showClassification) {
-                    UpdateList()
+                    CameraView()
                 }
             }
             .padding(8)

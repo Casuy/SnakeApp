@@ -15,6 +15,10 @@ struct TabBar: View {
                 Image(systemName: "house.fill")
                 Text("Home")
             }
+            CameraView().tabItem {
+                Image(systemName: "camera.fill")
+                Text("Identify")
+            }
             SnakeList().tabItem {
                 Image(systemName: "rectangle.stack.fill")
                 Text("Snakes")

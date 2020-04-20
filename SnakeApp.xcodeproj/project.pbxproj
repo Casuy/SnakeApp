@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,6 +49,8 @@
 		C1D1019F244C6C0C00C1ADDC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1019E244C6C0C00C1ADDC /* Data.swift */; };
 		C1D101A1244C6DEC00C1ADDC /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D101A0244C6DEC00C1ADDC /* PostList.swift */; };
 		C1D101A3244C70AD00C1ADDC /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D101A2244C70AD00C1ADDC /* DataStore.swift */; };
+		C1D101A6244D681C00C1ADDC /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = C1D101A5244D681C00C1ADDC /* Contentful */; };
+		C1D101AA244D87C600C1ADDC /* Snake_Breed_Identification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C1D101A9244D87C500C1ADDC /* Snake_Breed_Identification.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,7 @@
 		C1D1019E244C6C0C00C1ADDC /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		C1D101A0244C6DEC00C1ADDC /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		C1D101A2244C70AD00C1ADDC /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		C1D101A9244D87C500C1ADDC /* Snake_Breed_Identification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Snake_Breed_Identification.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1D101A6244D681C00C1ADDC /* Contentful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +138,7 @@
 				C15E2DFB2449A39B00B2139B /* RingView.swift */,
 				C147E2AC2449C29300128E1E /* Modifiers.swift */,
 				C18094EF2448596E00AC5573 /* Home.swift */,
+				C18094F124486A5A00AC5573 /* HomeView.swift */,
 				C18094F324487EE600AC5573 /* UpdateList.swift */,
 				C18094F52448824A00AC5573 /* UpdateDetail.swift */,
 				C18094F7244884EC00AC5573 /* UpdateStore.swift */,
@@ -141,7 +146,6 @@
 				C1D101A2244C70AD00C1ADDC /* DataStore.swift */,
 				C1D101A0244C6DEC00C1ADDC /* PostList.swift */,
 				C15E2DF724499D0E00B2139B /* TabBar.swift */,
-				C18094F124486A5A00AC5573 /* HomeView.swift */,
 				C147E2DC244C080100128E1E /* SnakeList.swift */,
 				C1D1019C244C65D400C1ADDC /* SnakeDetail.swift */,
 				C15C9C7D24457C6600758AC1 /* MenuView.swift */,
@@ -149,6 +153,7 @@
 				C147E2AE244AC40E00128E1E /* Work_Sans */,
 				C141480D243C3C0600BEAB7C /* LaunchScreen.storyboard */,
 				C1414810243C3C0600BEAB7C /* Info.plist */,
+				C1D101A9244D87C500C1ADDC /* Snake_Breed_Identification.mlmodel */,
 				C141480A243C3C0600BEAB7C /* Preview Content */,
 			);
 			path = SnakeApp;
@@ -215,6 +220,9 @@
 			dependencies = (
 			);
 			name = SnakeApp;
+			packageProductDependencies = (
+				C1D101A5244D681C00C1ADDC /* Contentful */,
+			);
 			productName = SnakeApp;
 			productReference = C14147FF243C3BFB00BEAB7C /* SnakeApp.app */;
 			productType = "com.apple.product-type.application";
@@ -243,6 +251,9 @@
 				Base,
 			);
 			mainGroup = C14147F6243C3BFB00BEAB7C;
+			packageReferences = (
+				C1D101A4244D681C00C1ADDC /* XCRemoteSwiftPackageReference "contentful.swift" */,
+			);
 			productRefGroup = C1414800243C3BFB00BEAB7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,6 +306,7 @@
 				C15E2DFC2449A39B00B2139B /* RingView.swift in Sources */,
 				C1D1019F244C6C0C00C1ADDC /* Data.swift in Sources */,
 				C1D101A3244C70AD00C1ADDC /* DataStore.swift in Sources */,
+				C1D101AA244D87C600C1ADDC /* Snake_Breed_Identification.mlmodel in Sources */,
 				C1D1019D244C65D400C1ADDC /* SnakeDetail.swift in Sources */,
 				C1414803243C3BFB00BEAB7C /* AppDelegate.swift in Sources */,
 				C18094F8244884EC00AC5573 /* UpdateStore.swift in Sources */,
@@ -502,6 +514,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1D101A4244D681C00C1ADDC /* XCRemoteSwiftPackageReference "contentful.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/contentful/contentful.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1D101A5244D681C00C1ADDC /* Contentful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1D101A4244D681C00C1ADDC /* XCRemoteSwiftPackageReference "contentful.swift" */;
+			productName = Contentful;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C14147F7243C3BFB00BEAB7C /* Project object */;
 }

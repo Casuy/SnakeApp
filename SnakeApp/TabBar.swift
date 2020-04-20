@@ -12,12 +12,12 @@ struct TabBar: View {
     var body: some View {
         TabView {
             Home().tabItem {
-                Image(systemName: "play.circle.fill")
+                Image(systemName: "house.fill")
                 Text("Home")
             }
-            ContentView().tabItem {
+            SnakeList().tabItem {
                 Image(systemName: "rectangle.stack.fill")
-                Text("Certificates")
+                Text("Snakes")
             }
         }
 //        .edgesIgnoringSafeArea(.top)

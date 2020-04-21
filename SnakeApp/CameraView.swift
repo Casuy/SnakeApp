@@ -11,7 +11,7 @@ import SwiftUI
 struct CameraView: View {
     @Environment(\.managedObjectContext) var moc
     
-    @State var name = "Bandy-Bandy"
+    @State var name = ""
     @State var confidence = "78.2%"
     @State var image1 : Data = .init(count: 0)
     
@@ -21,6 +21,24 @@ struct CameraView: View {
     @State var useCamera = false
     @State var selected = false
     @State var showResult = false
+    
+    let model = yolov3()
+    
+    private func performImageClassification() {
+        guard let img = self.inputImage else {return}
+        guard let resizedImage = img.resizeTo(size: CGSize(width: 224, height: 224)) else { return }
+        guard let buffer = resizedImage.toBuffer() else {return}
+        
+        let output = try? model.prediction(image: buffer)
+        
+        if let output = output {
+            let results = output.output.sorted { $0.1 > $1.1 }
+            let kv = results[results.startIndex]
+            self.name = "\(kv.0)"
+            self.confidence = String(format: "%.2f", kv.1 * 100)
+        }
+        
+    }
     
     var body: some View {
         
@@ -71,9 +89,9 @@ struct CameraView: View {
                         .frame(width: 70, height: 70)
                         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
                         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
-                    
                 }
                 .onTapGesture {
+                    self.performImageClassification()
                     self.showResult = true
                 }
                 
@@ -142,7 +160,7 @@ struct ImageView: View {
                         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
                         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
                     
-                    Text("It is \(self.confidence) a \(self.name)!")
+                    Text("It is \(self.confidence)% a \(self.name)!")
                         .foregroundColor(Color.white)
                         .frame(width: 350, height: 350)
                         .background(Color.black.opacity(0.2))

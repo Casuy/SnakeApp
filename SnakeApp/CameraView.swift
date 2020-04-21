@@ -12,7 +12,7 @@ struct CameraView: View {
     @Environment(\.managedObjectContext) var moc
     
     @State var name = ""
-    @State var confidence = "78.2%"
+    @State var confidence = ""
     @State var image1 : Data = .init(count: 0)
     
     @State var image: Image?

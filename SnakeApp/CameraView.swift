@@ -9,13 +9,11 @@
 import SwiftUI
 
 struct CameraView: View {
-    @Environment(\.managedObjectContext) var moc
     
     @State var name = ""
     @State var confidence = ""
-    @State var image1 : Data = .init(count: 0)
     
-    @State var image: Image?
+    @State var imageView: Image?
     @State var showingImagePicker = false
     @State var inputImage: UIImage?
     @State var useCamera = false
@@ -54,8 +52,8 @@ struct CameraView: View {
             .padding(.leading, 14)
             .padding(.top, 30)
             
-            ImageView(
-                image: self.$image,
+            CenterView(
+                image: self.$imageView,
                 selected: self.$selected,
                 showResult: self.$showResult,
                 name: self.$name,
@@ -120,7 +118,7 @@ struct CameraView: View {
     
     func loadImage() {
         guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
+        imageView = Image(uiImage: inputImage)
     }
 }
 
@@ -130,7 +128,7 @@ struct CameraView_Previews: PreviewProvider {
     }
 }
 
-struct ImageView: View {
+struct CenterView: View {
     @Binding var image: Image?
     @Binding var selected: Bool
     @Binding var showResult: Bool
@@ -160,7 +158,9 @@ struct ImageView: View {
                         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
                         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
                     
-                    Text("It is \(self.confidence)% a \(self.name)!")
+                    Text("It is \(self.confidence)%\n a \(self.name)!")
+                        .font(.system(size: 25)).bold()
+                        .multilineTextAlignment(.center)
                         .foregroundColor(Color.white)
                         .frame(width: 350, height: 350)
                         .background(Color.black.opacity(0.2))

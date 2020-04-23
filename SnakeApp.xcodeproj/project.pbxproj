@@ -40,10 +40,6 @@
 		C15C9C7E24457C6600758AC1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15C9C7D24457C6600758AC1 /* MenuView.swift */; };
 		C15E2DF824499D0E00B2139B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E2DF724499D0E00B2139B /* TabBar.swift */; };
 		C15E2DFC2449A39B00B2139B /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15E2DFB2449A39B00B2139B /* RingView.swift */; };
-		C15F3031244E71CF00A3C11E /* UpdateModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C15F302F244E71CF00A3C11E /* UpdateModel.xcdatamodeld */; };
-		C15F3044244E84D500A3C11E /* Result+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F3042244E84D500A3C11E /* Result+CoreDataClass.swift */; };
-		C15F3045244E84D500A3C11E /* Result+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F3043244E84D500A3C11E /* Result+CoreDataProperties.swift */; };
-		C15F3047244E84EB00A3C11E /* ResultList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F3046244E84EB00A3C11E /* ResultList.swift */; };
 		C15F3050244F1FF300A3C11E /* yolov3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C15F304F244F1FF300A3C11E /* yolov3.mlmodel */; };
 		C15F3052244F241100A3C11E /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F3051244F241100A3C11E /* UIImage+Extensions.swift */; };
 		C18094F02448596E00AC5573 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18094EF2448596E00AC5573 /* Home.swift */; };
@@ -96,10 +92,6 @@
 		C15C9C7D24457C6600758AC1 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		C15E2DF724499D0E00B2139B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		C15E2DFB2449A39B00B2139B /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
-		C15F3030244E71CF00A3C11E /* UpdateModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UpdateModel.xcdatamodel; sourceTree = "<group>"; };
-		C15F3042244E84D500A3C11E /* Result+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Result+CoreDataClass.swift"; path = "SnakeApp/Data/Result+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C15F3043244E84D500A3C11E /* Result+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Result+CoreDataProperties.swift"; path = "SnakeApp/Data/Result+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C15F3046244E84EB00A3C11E /* ResultList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultList.swift; sourceTree = "<group>"; };
 		C15F304C244F1FD800A3C11E /* SnakeApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SnakeApp.xcodeproj; sourceTree = SOURCE_ROOT; };
 		C15F304F244F1FF300A3C11E /* yolov3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yolov3.mlmodel; sourceTree = "<group>"; };
 		C15F3051244F241100A3C11E /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -131,8 +123,6 @@
 		C14147F6243C3BFB00BEAB7C = {
 			isa = PBXGroup;
 			children = (
-				C15F3042244E84D500A3C11E /* Result+CoreDataClass.swift */,
-				C15F3043244E84D500A3C11E /* Result+CoreDataProperties.swift */,
 				C1414801243C3BFB00BEAB7C /* SnakeApp */,
 				C1414800243C3BFB00BEAB7C /* Products */,
 			);
@@ -162,7 +152,6 @@
 				C18094F324487EE600AC5573 /* UpdateList.swift */,
 				C18094F52448824A00AC5573 /* UpdateDetail.swift */,
 				C18094F7244884EC00AC5573 /* UpdateStore.swift */,
-				C15F3046244E84EB00A3C11E /* ResultList.swift */,
 				C1D1019E244C6C0C00C1ADDC /* Data.swift */,
 				C1D101A2244C70AD00C1ADDC /* DataStore.swift */,
 				C1D101A0244C6DEC00C1ADDC /* PostList.swift */,
@@ -172,7 +161,6 @@
 				C15C9C7D24457C6600758AC1 /* MenuView.swift */,
 				C15F304F244F1FF300A3C11E /* yolov3.mlmodel */,
 				C1414808243C3C0600BEAB7C /* Assets.xcassets */,
-				C15F302F244E71CF00A3C11E /* UpdateModel.xcdatamodeld */,
 				C15F304C244F1FD800A3C11E /* SnakeApp.xcodeproj */,
 				C147E2AE244AC40E00128E1E /* Work_Sans */,
 				C141480D243C3C0600BEAB7C /* LaunchScreen.storyboard */,
@@ -342,22 +330,18 @@
 				C15F3052244F241100A3C11E /* UIImage+Extensions.swift in Sources */,
 				C1D101A3244C70AD00C1ADDC /* DataStore.swift in Sources */,
 				C1D1019D244C65D400C1ADDC /* SnakeDetail.swift in Sources */,
-				C15F3047244E84EB00A3C11E /* ResultList.swift in Sources */,
 				C1414803243C3BFB00BEAB7C /* AppDelegate.swift in Sources */,
 				C18094F8244884EC00AC5573 /* UpdateStore.swift in Sources */,
 				C18094F424487EE600AC5573 /* UpdateList.swift in Sources */,
 				C15C9C7E24457C6600758AC1 /* MenuView.swift in Sources */,
 				C147E2DD244C080100128E1E /* SnakeList.swift in Sources */,
-				C15F3031244E71CF00A3C11E /* UpdateModel.xcdatamodeld in Sources */,
 				C18094F62448824A00AC5573 /* UpdateDetail.swift in Sources */,
 				C18094F02448596E00AC5573 /* Home.swift in Sources */,
 				C18094F224486A5A00AC5573 /* HomeView.swift in Sources */,
-				C15F3044244E84D500A3C11E /* Result+CoreDataClass.swift in Sources */,
 				C1D101C0244DA65000C1ADDC /* CameraView.swift in Sources */,
 				C1D101A1244C6DEC00C1ADDC /* PostList.swift in Sources */,
 				C1414805243C3BFB00BEAB7C /* SceneDelegate.swift in Sources */,
 				C1414807243C3BFB00BEAB7C /* ContentView.swift in Sources */,
-				C15F3045244E84D500A3C11E /* Result+CoreDataProperties.swift in Sources */,
 				C1D101C2244DA71B00C1ADDC /* ImagePicker.swift in Sources */,
 				C15F3050244F1FF300A3C11E /* yolov3.mlmodel in Sources */,
 				C15E2DF824499D0E00B2139B /* TabBar.swift in Sources */,
@@ -574,19 +558,6 @@
 			productName = Contentful;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		C15F302F244E71CF00A3C11E /* UpdateModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C15F3030244E71CF00A3C11E /* UpdateModel.xcdatamodel */,
-			);
-			currentVersion = C15F3030244E71CF00A3C11E /* UpdateModel.xcdatamodel */;
-			path = UpdateModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C14147F7243C3BFB00BEAB7C /* Project object */;
 }

@@ -12,40 +12,36 @@ struct UpdateList: View {
     @ObservedObject var store = UpdateStore()
     
     func addUpdate() {
-        store.updates.append(Update(image: "Card1", title: "New Item", text: "Text", date: "Jan 1"))
+        store.updates.append(Update(image: "Card1", title: "New Item", text: "Text"))
     }
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(store.updates) { update in
-                    NavigationLink(destination: UpdateDetail(update: update)) {
+                    VStack(alignment: .center) {
+                        Image(update.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 300, height: 200)
+                            .background(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                            .cornerRadius(20)
+                            .padding(.leading, 23)
+                        
                         HStack {
-                            Image(update.image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
-                                .background(Color.black)
-                                .cornerRadius(20)
-                                .padding(.trailing, 4)
+                            Text(update.title)
+                                .font(.system(size: 20, weight: .bold))
+                                .padding(.leading, 10)
                             
-                            VStack (alignment: .leading, spacing: 8.0) {
-                                Text(update.title)
-                                    .font(.system(size: 20, weight: .bold))
-                                
-                                Text(update.text)
-                                    .lineLimit(2)
-                                    .font(.subheadline)
-                                    .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
-                                
-                                Text(update.date)
-                                    .font(.caption)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.secondary)
-                            }
+                            Spacer()
+                            
+                            Text(update.text)
+                                .font(.subheadline)
+                                .foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+                                .padding(.trailing, 10)
                         }
-                        .padding(.vertical, 8)
                     }
+                    .padding(.vertical, 8)
                 }
                 .onDelete { index in
                     self.store.updates.remove(at: index.first!)
@@ -54,10 +50,8 @@ struct UpdateList: View {
                     self.store.updates.move(fromOffsets: source, toOffset: destination)
                 }
             }
-            .navigationBarTitle(Text("Updates"))
-            .navigationBarItems(leading: Button(action: addUpdate) {
-                Text("Add Updates")
-            }, trailing: EditButton())
+            .navigationBarTitle(Text("History"))
+            .navigationBarItems(trailing: EditButton())
         }
     }
 }
@@ -73,13 +67,9 @@ struct Update: Identifiable {
     var image: String
     var title: String
     var text: String
-    var date: String
 }
 
 let updateData = [
-    Update(image: "Card1", title: "SwiftUI Advanced", text: "Take your SwiftUI app to the App Store with advanced techniques like API data, packages and CMS.", date: "JAN 1"),
-    Update(image: "Card2", title: "Webflow", text: "Design and animate a high converting landing page with advanced interactions, payments and CMS", date: "OCT 17"),
-    Update(image: "Card3", title: "ProtoPie", text: "Quickly prototype advanced animations and interactions for mobile and Web.", date: "AUG 27"),
-    Update(image: "Card4", title: "SwiftUI", text: "Learn how to code custom UIs, animations, gestures and components in Xcode 11", date: "JUNE 26"),
-    Update(image: "Card5", title: "Framer Playground", text: "Create powerful animations and interactions with the Framer X code editor", date: "JUN 11")
+    Update(image: "redbellied_black_snake", title: "Red-Bellied Black Snake", text: "54.6%"),
+    Update(image: "spotted_python", title: "Spotted Python", text: "49.2%"),
 ]

@@ -12,7 +12,7 @@ struct UpdateList: View {
     @ObservedObject var store = UpdateStore()
     
     func addUpdate() {
-        store.updates.append(Update(image: "Card1", title: "New Item", text: "Text"))
+        store.updates.append(Update(image: "photo", title: "Bandy Bandy", text: "75.01%"))
     }
     
     var body: some View {
@@ -26,7 +26,7 @@ struct UpdateList: View {
                             .frame(width: 300, height: 200)
                             .background(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
                             .cornerRadius(20)
-                            .padding(.leading, 23)
+                            
                         
                         HStack {
                             Text(update.title)
@@ -51,7 +51,9 @@ struct UpdateList: View {
                 }
             }
             .navigationBarTitle(Text("History"))
-            .navigationBarItems(trailing: EditButton())
+            .navigationBarItems(leading: Button(action: addUpdate) {
+                Text("          ")
+            }, trailing: EditButton())
         }
     }
 }

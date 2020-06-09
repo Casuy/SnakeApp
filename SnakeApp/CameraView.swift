@@ -20,7 +20,7 @@ struct CameraView: View {
     @State var selected = false
     @State var showResult = false
     
-    let model = yolov3()
+    let model = TinyYolo()
     
     private func performImageClassification() {
         guard let img = self.inputImage else {return}
